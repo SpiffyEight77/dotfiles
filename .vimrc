@@ -14,14 +14,29 @@ let g:airline_theme='onehalfdark'
 
 set background=dark
 set foldenable
+set smarttab
+set expandtab
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 syntax on
 set autoindent
 set showmatch
 set number
 set noswapfile
 set t_Co=256
+set showcmd
+set nobackup
 
-  if (has("termguicolors"))
+if (has("termguicolors"))
     set termguicolors
-  endif
+endif
+
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-d> <del>
+
+autocmd VimEnter * NERDTree
+let NERDTreeWinPos="left"
