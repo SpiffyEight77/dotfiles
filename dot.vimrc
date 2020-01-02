@@ -6,10 +6,11 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'joshdick/onedark.vim'
 call plug#end()
 
-colorscheme onedark
-" let g:airline_theme='onedark'
+" colorscheme onedark
+colorscheme onehalfdark
 " lightline
 " let g:lightline.colorscheme='onehalfdark'
+let g:airline_theme='onehalfdark'
 
 set background=dark
 set foldenable
