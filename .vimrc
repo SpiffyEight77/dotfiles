@@ -40,3 +40,6 @@ inoremap <C-d> <del>
 
 autocmd VimEnter * NERDTree
 let NERDTreeWinPos="left"
+
+" filetype on
+" filetype off
