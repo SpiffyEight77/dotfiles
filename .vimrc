@@ -45,9 +45,18 @@ let NERDTreeWinPos="left"
 " filetype on
 " filetype off
 
-" Welcome Page
+" Startify
+let g:startify_files_number = 5
+let g:startify_lists = [
+    \ { 'type': 'files',     'header': ['   MRU']            },
+    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+    \ ]
+let g:startify_bookmarks = [
+    \ '~/workspace',
+    \]
+highlight StartifyHeader guifg=#e61919
 
-" let g:startify_center=80
+" Welcome Page NERV
 let g:startify_custom_header = [
 \ '                             ███████████               ',
 \ '                          ███████████████████               ',
@@ -75,4 +84,36 @@ let g:startify_custom_header = [
 \ '                                                  ███   ',
 \ '                                                   ░█░  ',
 \]
+
+"let g:startify_custom_header = [
+"\ '                            ....ZZZZZZZZZ..              ',         
+"\ '                          ~ZZZZZZZZZZZZZZZ.              ',
+"\ '                         OZZZZZZZZZZZZZZZ                ',  
+"\ '              .         .ZZZZZZZZZZZZZZZZZZZZ            ',  
+"\ '            .ZZ         .ZZZZZZZZZZZZZZZZZZZZZZZ.        ',  
+"\ '              ZZ.       .ZZZZZZZZZZZZZZZZZZZZZZZZZ       ',  
+"\ '               $Z       OZZZZZZZZZZZZZZZZZZZZZZZZZZ.     ',  
+"\ '                 Z.    .ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ.    ',  
+"\ '                  OZ7OZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ.   ', 
+"\ '                    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ.     ',  
+"\ '                     ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ        ',  
+"\ '     ZZZ      +Z.  .ZZ.ZZZZZZZZZZZZZZZZZZZ .             ',  
+"\ '      ZZZ.    .Z    ZZ. =ZZZZZZZZZZZZZZZZZZZZ,           ',  
+"\ '      Z ZZO    Z    ZZ.  .ZZZZZZZZZZZZZZZZZZZZO.         ',  
+"\ '      Z  ZZZ   Z    ZZ....ZZZZZZZZZZZZZZZZZZZZZ.         ',  
+"\ '      Z   .ZZ. Z    ZZ.    Z ZZZZZZZZZZZZZZZZZZZ         ',  
+"\ '      Z    .ZZ.Z    ZZ.    .  ~ZZZZZZZZZZZZZZZZZ.        ',  
+"\ '      Z      ZZZ    ZZ.      Z .ZZZZZZZZZZZZZZZZO        ',  
+"\ '    .?Z.      ZZ   .ZZ.....ZZ.   IZZZZZZZZZZZZZZZ        ',  
+"\ '               .                  .ZZZZZZZZZZZZZZZ.      ',  
+"\ '                      .ZZZZZZZO.  7ZZZZZZZZZZZZZZZ.      ',  
+"\ '                       ~ZD   .ZZ.  IZZZZZZZZZZZZZZ.      ',  
+"\ '                       =ZD    ZZ    ZZ.:ZZZZZZZZZZ?      ',  
+"\ '                       =ZD  .ZZZ     ZZ. ZZZZZZZZZZ      ',  
+"\ '                       =ZZOZZ.       .ZZ  ZZZZZZZZ.      ',  
+"\ '                       =ZD .ZZ.       ZZ8.Z ZZZZZZ.      ',  
+"\ '                       =ZD  .ZZI      .ZZZ. ..ZZZZ.      ',  
+"\ '                       OZZ    ZZZ      .Z.    .ZZZ?      ',  
+"\ '                                               ,Z.       ',
+"\]
 
