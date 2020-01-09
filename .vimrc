@@ -6,6 +6,7 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'joshdick/onedark.vim'
 Plug 'mhinz/vim-startify'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " colorscheme onedark
@@ -14,6 +15,7 @@ colorscheme onehalfdark
 " let g:lightline.colorscheme='onedark'
 let g:airline_theme='onehalfdark'
 
+set encoding=UTF-8
 set background=dark
 set foldenable
 set smarttab
@@ -60,6 +62,12 @@ let g:startify_bookmarks = [
     \ '~/workspace',
     \]
 highlight StartifyHeader guifg=#e61919
+    autocmd VimEnter *
+                \   if !argc()
+                \ |   Startify
+                \ |   NERDTree
+                \ |   wincmd w
+                \ | endif
 
 " Welcome Page NERV
 let g:startify_custom_header = [
