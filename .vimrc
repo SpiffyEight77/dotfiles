@@ -5,12 +5,13 @@ Plug 'preservim/nerdtree'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'joshdick/onedark.vim'
 Plug 'mhinz/vim-startify'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
 " colorscheme onedark
 colorscheme onehalfdark
 " lightline
-" let g:lightline.colorscheme='onehalfdark'
+" let g:lightline.colorscheme='onedark'
 let g:airline_theme='onehalfdark'
 
 set background=dark
@@ -44,6 +45,10 @@ let NERDTreeWinPos="left"
 
 " filetype on
 " filetype off
+
+" markdown
+let g:mkdp_command_for_global = 1
+let g:mkdp_open_to_the_world = 1
 
 " Startify
 let g:startify_files_number = 5
