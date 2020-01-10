@@ -9,6 +9,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
 " Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
@@ -56,6 +57,12 @@ let g:mkdp_command_for_global = 1
 let g:mkdp_open_to_the_world = 1
 
 " vim-which-key
+
+" indentLine
+let g:indentLine_enabled = 0
+" let g:indentLine_char = '┆'
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 
 " Startify
 let g:startify_files_number = 5
