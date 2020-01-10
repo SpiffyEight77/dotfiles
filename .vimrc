@@ -7,6 +7,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'mhinz/vim-startify'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 " Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
