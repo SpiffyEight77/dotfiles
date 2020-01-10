@@ -7,6 +7,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'mhinz/vim-startify'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'ryanoasis/vim-devicons'
+" Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
 " colorscheme onedark
@@ -52,15 +53,17 @@ let NERDTreeWinPos="left"
 let g:mkdp_command_for_global = 1
 let g:mkdp_open_to_the_world = 1
 
+" vim-which-key
+
 " Startify
 let g:startify_files_number = 5
 let g:startify_lists = [
-    \ { 'type': 'files',     'header': ['   MRU']            },
-    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-    \ ]
+                     \ { 'type': 'files',     'header': ['   MRU']            },
+                     \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+                     \ ]
 let g:startify_bookmarks = [
-    \ '~/workspace',
-    \]
+                          \ '~/workspace',
+                          \]
 highlight StartifyHeader guifg=#e61919
     autocmd VimEnter *
                 \   if !argc()
