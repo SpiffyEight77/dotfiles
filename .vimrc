@@ -1,23 +1,29 @@
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'joshdick/onedark.vim'
-Plug 'mhinz/vim-startify'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'joshdick/onedark.vim'
 " Plug 'liuchengxu/vim-which-key'
+Plug 'mhinz/vim-startify'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
+" colorscheme
 " colorscheme onedark
 colorscheme onehalfdark
 " lightline
+
+" airline
 " let g:lightline.colorscheme='onedark'
 let g:airline_theme='onehalfdark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
 
 set encoding=UTF-8
 set background=dark
