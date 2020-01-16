@@ -4,6 +4,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
 " Plug 'liuchengxu/vim-which-key'
+Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -15,7 +16,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" colorscheme
+" Color
 " colorscheme onedark
 colorscheme onehalfdark
 " lightline
@@ -42,6 +43,7 @@ set noswapfile
 set t_Co=256
 set showcmd
 set nobackup
+set modifiable
 
 if (has("termguicolors"))
     set termguicolors
@@ -81,12 +83,15 @@ let g:startify_bookmarks = [
                           \ '~/workspace',
                           \]
 highlight StartifyHeader guifg=#e61919
-    autocmd VimEnter *
-                \   if !argc()
-                \ |   Startify
-                \ |   NERDTree
-                \ |   wincmd w
-                \ | endif
+autocmd VimEnter *
+            \   if !argc()
+            \ |   Startify
+            \ |   NERDTree
+            \ |   wincmd w
+            \ | endif
+
+autocmd VimEnter * Tagbar
+
 
 " Welcome Page NERV
 let g:startify_custom_header = [
