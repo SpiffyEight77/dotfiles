@@ -54,6 +54,10 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 inoremap <C-d> <del>
+inoremap <C-o> <Esc>o
+inoremap jk <ESC>
+
+nmap <C-n> :NERDTreeToggle <CR>
 
 " autocmd VimEnter * NERDTree
 let NERDTreeWinPos="left"
