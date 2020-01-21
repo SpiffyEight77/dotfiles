@@ -44,6 +44,7 @@ set t_Co=256
 set showcmd
 set nobackup
 set modifiable
+set list lcs=tab:\┆\ 
 
 if (has("termguicolors"))
     set termguicolors
@@ -72,8 +73,8 @@ let g:mkdp_open_to_the_world = 1
 " vim-which-key
 
 " indentLine
-let g:indentLine_enabled = 0
-" let g:indentLine_char = '┆'
+let g:indentLine_enabled = 1
+let g:indentLine_char = '┆'
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 
