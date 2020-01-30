@@ -1,10 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/wayne/.oh-my-zsh"
 export TERM="xterm-256color"
+# Path to your oh-my-zsh installation.
 POWERLEVEL9K_MODE='nerdfont-complete'
+export ZSH="/Users/wayne/.oh-my-zsh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -99,8 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# nvim
+export PATH=$PATH:/usr/local/go/
 alias vim="nvim"
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 # POWERLEVEL9K
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
@@ -113,3 +114,21 @@ POWERLEVEL9K_RAM_BACKGROUND='green'
 POWERLEVEL9K_OS_ICON_BACKGROUND='magenta'
 POWERLEVEL9K_OS_ICON_FOREGROUND="black"
 POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="grey66"
+
+alias tmux="tmux -2"
+
+if [ -f /sw/etc/bash_completion ]; then
+   . /sw/etc/bash_completion
+fi
+
+# go
+export GOPROXY=https://goproxy.cn
+
+# gsed
+# PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+# alias sed="gsed"
+
+# llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
