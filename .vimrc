@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'Chiel92/vim-autoformat'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
@@ -96,6 +97,10 @@ autocmd VimEnter *
             \ | endif
 
 autocmd VimEnter * Tagbar
+
+" autoformat
+noremap <C-f> :Autoformat<CR>
+" let g:python3_host_prog=/usr/local/bin/python3
 
 
 " Welcome Page NERV
