@@ -5,6 +5,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
 " Plug 'liuchengxu/vim-which-key'
+Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -78,6 +79,13 @@ let g:indentLine_enabled = 1
 let g:indentLine_char = '┆'
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
+" vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+let g:vimtex_compiler_engine='latexmk'
 
 " Startify
 let g:startify_files_number = 5
@@ -101,7 +109,6 @@ autocmd VimEnter * Tagbar
 " autoformat
 noremap <C-f> :Autoformat<CR>
 " let g:python3_host_prog=/usr/local/bin/python3
-
 
 " Welcome Page NERV
 let g:startify_custom_header = [
