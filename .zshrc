@@ -132,3 +132,12 @@ export GOPROXY=https://goproxy.cn
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+# thefuck
+eval $(thefuck --alias)
+
+# haskell stack
+export PATH=$HOME/.local/bin:$PATH
+
+# lsd
+alias ls='lsd'
