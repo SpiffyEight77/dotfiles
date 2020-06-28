@@ -2,33 +2,45 @@
     "languageserver": {
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "objc", "objcpp"],
-            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json"],
             "initializationOptions": {
                 "cache": {
-                    "directory": "/tmp/ccls"
+                    "directory": ".ccls-cache"
                 },
-                // see https://github.com/MaskRay/ccls/issues/191
                 "clang": {
-                    // from clang -v -fsyntax-only -x c++ /dev/null
                     "extraArgs": [
-                        "-isystem/usr/local/include",
-                        "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
-                        "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include",
-                        "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-                        "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
-                        "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+                        "-isystem",
+                        "/usr/local/opt/llvm/include/c++/v1",
+                        "-Wold-style-cast"
                     ],
-                    //From clang -print-resource-dir
-                    "resourceDir": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0"
+                    "pathMappings": [],
+                    "resourceDir": "/usr/local/opt/llvm/lib/clang/10.0.0"
+                },
+                "client": {
+                    "snippetSupport": true
+                }
+            }
+        },
+        "haskell": {
+            "command": "hie-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": [
+                "stack.yaml",
+                "cabal.config",
+                "package.yaml"
+            ],
+            "filetypes": [
+                "hs",
+                "lhs",
+                "haskell"
+            ],
+            "initializationOptions": {
+                "languageServerHaskell": {
+                    "hlintOn": true
                 }
             }
         }
-    },
-    "languageserver": {
-        "digestif": {
-            "command": "digestif",
-            "filetypes": ["tex", "plaintex", "context"]
-        }
     }
+
 }
