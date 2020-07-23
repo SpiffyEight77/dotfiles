@@ -1,5 +1,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'autozimu/LanguageClient-neovim', {
+            \ 'branch': 'next',
+            \ 'do': './install.sh'
+            \ }
 Plug 'Chiel92/vim-autoformat'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'joshdick/onedark.vim'
@@ -11,6 +15,7 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sirver/ultisnips'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -77,6 +82,7 @@ let g:mkdp_open_to_the_world = 1
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_char = '┆'
+let g:indentLine_setConceal = 0
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " vimtex
