@@ -126,6 +126,8 @@ autocmd VimEnter * Tagbar
 noremap <C-f> :Autoformat<CR>
 " let g:python3_host_prog=/usr/local/bin/python3
 
+set clipboard=unnamedplus
+
 " Welcome Page NERV
 let g:startify_custom_header = [
             \ '                             ███████████               ',
