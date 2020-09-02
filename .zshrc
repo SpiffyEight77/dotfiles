@@ -141,3 +141,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 # lsd
 alias ls='lsd'
+
+# gcc8
+alias g++="g++-8"
