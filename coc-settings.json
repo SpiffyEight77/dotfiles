@@ -15,7 +15,7 @@
                         "-Wold-style-cast"
                     ],
                     "pathMappings": [],
-                    "resourceDir": "/usr/local/opt/llvm/lib/clang/10.0.0"
+                    "resourceDir": "/usr/local/opt/llvm@10/lib/clang/10.0.0"
                 },
                 "client": {
                     "snippetSupport": true
@@ -40,6 +40,12 @@
                     "hlintOn": true
                 }
             }
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod"],
+            "disableWorkspaceFolders": true,
+            "filetypes": ["go"]
         }
     }
 

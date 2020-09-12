@@ -5,6 +5,7 @@ Plug 'airblade/vim-gitgutter'
             \ 'do': './install.sh'
             \ }
 Plug 'Chiel92/vim-autoformat'
+Plug 'fatih/vim-go'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
@@ -51,7 +52,7 @@ set t_Co=256
 set showcmd
 set nobackup
 set modifiable
-set list lcs=tab:\┆\
+" set list lcs=tab:\┆\
 
 if (has("termguicolors"))
     set termguicolors
@@ -82,7 +83,7 @@ let g:mkdp_open_to_the_world = 1
 " indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_char = '┆'
-let g:indentLine_setConceal = 0
+let g:indentLine_setConceal = 1
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " vimtex
@@ -127,6 +128,9 @@ noremap <C-f> :Autoformat<CR>
 " let g:python3_host_prog=/usr/local/bin/python3
 
 set clipboard=unnamedplus
+
+" go lsp
+let g:go_gopls_enabled = 0
 
 " Welcome Page NERV
 let g:startify_custom_header = [
