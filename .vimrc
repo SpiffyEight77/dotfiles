@@ -53,6 +53,9 @@ set showcmd
 set nobackup
 set modifiable
 " set list lcs=tab:\┆\
+highlight Normal guibg=NONE ctermbg=None
+highlight LineNr guibg=NONE
+
 
 if (has("termguicolors"))
     set termguicolors
