@@ -34,6 +34,8 @@ colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
+let mapleader=" "
+let g:gitgutter_set_sign_backgrounds = 1
 
 set encoding=UTF-8
 set background=dark
@@ -47,11 +49,21 @@ syntax on
 set autoindent
 set showmatch
 set number
+set relativenumber
 set noswapfile
 set t_Co=256
 set showcmd
 set nobackup
 set modifiable
+set wrap
+set nocursorline
+set showcmd
+set wildmenu
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
 " set list lcs=tab:\┆\
 highlight Normal guibg=NONE ctermbg=None
 highlight LineNr guibg=NONE
@@ -60,6 +72,10 @@ highlight LineNr guibg=NONE
 if (has("termguicolors"))
     set termguicolors
 endif
+
+map <C-s> :w<CR>
+map <C-q> :q<CR>
+map <C-r> :source /Users/wayne/.config/nvim/init.vim<CR>
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
@@ -70,6 +86,11 @@ inoremap <C-o> <Esc>o
 inoremap jk <ESC>
 
 nmap <C-n> :NERDTreeToggle <CR>
+nmap <LEADER><CR> :nohl
+nmap J 5j
+nmap K 5k
+nmap H 5h
+nmap L 5l
 
 " autocmd VimEnter * NERDTree
 let NERDTreeWinPos="left"
