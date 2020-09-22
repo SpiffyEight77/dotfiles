@@ -4,6 +4,7 @@ Plug 'airblade/vim-gitgutter'
             \ 'branch': 'next',
             \ 'do': './install.sh'
             \ }
+Plug 'jiangmiao/auto-pairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'fatih/vim-go'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -14,6 +15,7 @@ Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sonph/onehalf'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
@@ -32,10 +34,12 @@ colorscheme onehalfdark
 " airline
 " let g:lightline.colorscheme='onedark'
 let g:airline_theme='onehalfdark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled=1
+let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:gitgutter_set_sign_backgrounds=1
 let mapleader=" "
-let g:gitgutter_set_sign_backgrounds = 1
 
 set encoding=UTF-8
 set background=dark
@@ -75,22 +79,51 @@ endif
 
 map <C-s> :w<CR>
 map <C-q> :q<CR>
+
 map <C-r> :source /Users/wayne/.config/nvim/init.vim<CR>
+
+map vl :set splitright<CR>:vsplit<CR>
+map vh :set nosplitright<CR>:vsplit<CR>
+map vj :set splitbelow<CR>:split<CR>
+map vk :set nosplitbelow<CR>:split<CR>
+
+map vn <C-w>t<C-w>H
+map vm <C-w>t<C-w>K
+
+map <LEADER>h <C-w>h
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>k
+map <LEADER>l <C-w>l
+
+map <up>    :res +5<CR>
+map <down>  :res -5<CR>
+map <right> :vertical resize+5<CR>
+map <left>  :vertical resize-5<CR>
+
+map tt :tabe<CR>
+map th :-tabnext<CR>
+map tl :+tabnext<CR>
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+
 inoremap <C-d> <del>
 inoremap <C-o> <Esc>o
 inoremap jk <ESC>
 
-nmap <C-n> :NERDTreeToggle <CR>
+map <C-n> :NERDTreeToggle<CR>
+
 nmap <LEADER><CR> :nohl
+
+nmap <C-h> 0
+nmap <C-l> $
+
 nmap J 5j
 nmap K 5k
-nmap H 5h
-nmap L 5l
+nmap H 7h
+nmap L 7l
 
 " autocmd VimEnter * NERDTree
 let NERDTreeWinPos="left"
@@ -113,15 +146,15 @@ let g:indentLine_setConceal = 1
 " vimtex
 " let g:vimtex_latexmk_options='-pdf -pdflatex="xelatex -synctex=1 \%S \%O" -verbose -file-line-error -interaction=nonstopmode'
 
-let g:vimtex_compiler_latexmk = { 
-        \ 'executable' : 'latexmk',
-        \ 'options' : [ 
-        \   '-xelatex',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
+let g:vimtex_compiler_latexmk = {
+            \ 'executable' : 'latexmk',
+            \ 'options' : [
+            \   '-xelatex',
+            \   '-file-line-error',
+            \   '-synctex=1',
+            \   '-interaction=nonstopmode',
+            \ ],
+            \}
 let g:tex_flavor='latex'
 let g:vimtex_view_method='skim'
 let g:vimtex_quickfix_mode=0
