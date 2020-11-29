@@ -118,7 +118,7 @@ POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="grey66"
 alias tmux="tmux -2"
 
 if [ -f /sw/etc/bash_completion ]; then
-   . /sw/etc/bash_completion
+    . /sw/etc/bash_completion
 fi
 
 # go
@@ -144,3 +144,10 @@ alias ls='lsd'
 
 # gcc8
 alias g++="g++-8"
+
+# proxy
+# export http_proxy=http://127.0.0.1:1087
+# export http_proxy=http://127.0.0.1:58591
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=$http_proxy
+
