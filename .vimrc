@@ -6,7 +6,7 @@ Plug 'airblade/vim-gitgutter'
             \ }
 Plug 'jiangmiao/auto-pairs'
 Plug 'Chiel92/vim-autoformat'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf.vim'
