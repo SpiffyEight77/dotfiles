@@ -1,0 +1,52 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                },
+                "clang": {
+                    "extraArgs": [
+                        "-isystem",
+                        "/usr/local/opt/llvm/include/c++/v1",
+                        "-Wold-style-cast"
+                    ],
+                    "pathMappings": [],
+                    "resourceDir": "/usr/local/opt/llvm@10/lib/clang/10.0.0"
+                },
+                "client": {
+                    "snippetSupport": true
+                }
+            }
+        },
+        "haskell": {
+            "command": "hie-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": [
+                "stack.yaml",
+                "cabal.config",
+                "package.yaml"
+            ],
+            "filetypes": [
+                "hs",
+                "lhs",
+                "haskell"
+            ],
+            "initializationOptions": {
+                "languageServerHaskell": {
+                    "hlintOn": true
+                }
+            }
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod"],
+            "disableWorkspaceFolders": true,
+            "filetypes": ["go"]
+        }
+    }
+
+}
