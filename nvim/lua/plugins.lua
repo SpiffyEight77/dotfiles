@@ -80,6 +80,19 @@ packer.startup({
     --- vim-bbye
     use 'moll/vim-bbye'
 
+    --- null-ls.nvim
+    use 'nvim-lua/plenary.nvim'
+    use({
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+    })
+
+    --- nvim-autopairs
+    use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+    }
+
   end,
   config = {
     max_jobs = 16,
@@ -91,7 +104,7 @@ packer.startup({
   },
 })
 
--- 每次保存 plugins.lua 自动安装插件
+-- automatically install plugins when the plugins.lua file is saved
 pcall(
   vim.cmd,
   [[

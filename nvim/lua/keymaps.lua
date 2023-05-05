@@ -67,6 +67,8 @@ map("i", "<C-s>", "<ESC>:w<CR>", opt)
 --NvimTree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
 map("n", "<C-f>", ":NvimTreeFindFile<CR>", opt)
+map("n", "=", ":NvimTreeResize +30<CR>", opt)
+map("n", "-", ":NvimTreeResize -30<CR>", opt)
 
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
@@ -77,3 +79,6 @@ map("n", "N", ":BufferLineCycleNext<CR>", opt)
 
 -- vim-bbye
 map("n", "<C-c>", ":Bdelete!<CR>", opt)
+
+-- null-ls
+map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)

@@ -18,6 +18,7 @@ require("config.nvim-treesitter")
 require("config.indent_blankline")
 require("config.gitsigns")
 require("config.nvim-cmp")
+require("config.null-ls")
 
 -- LSP
 require("lsp")
