@@ -12,23 +12,23 @@ vim.wo.relativenumber = true
 -- right reference line
 vim.wo.colorcolumn = "80"
 
--- two spaces equal one tab
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftround = true
+-- four spaces equal one tab
+vim.o.tabstop = 4
+vim.bo.tabstop = 4
+-- vim.o.softtabstop = 2
+-- vim.o.shiftround = true
 
--- >> << move two spaces
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+-- >> << move four spaces
+vim.o.shiftwidth = 4
+vim.bo.shiftwidth = 4
 
 -- replace space with tab
-vim.o.expandtab = true
-vim.bo.expandtab = true
+-- vim.o.expandtab = true
+-- vim.bo.expandtab = true
 
 -- align new lines with current line
-vim.o.autoindent = true
-vim.bo.autoindent = true
+-- vim.o.autoindent = true
+-- vim.bo.autoindent = true
 vim.o.smartindent = true
 
 -- search is case-insensitive
@@ -99,13 +99,13 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.pumheight = 10
 
 -- always display tabline
-vim.o.showtabline = 2
+-- vim.o.showtabline = 2
 
 -- after using the enhanced status bar plugin, there is no longer a need for Vim's mode prompt
 vim.o.showmode = false
 
 -- pastboard configuration
-vim.opt.clipboard = "unnamedplus" 
+vim.opt.clipboard = "unnamedplus"
 
 vim.o.termguicolors = true
 

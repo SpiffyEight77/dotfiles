@@ -12,8 +12,8 @@ vim.g.maplocalleader = " "
 
 -- define common options
 local opt = {
-  noremap = true, -- non-recursive
-  silent = true,  -- do not show message
+	noremap = true, -- non-recursive
+	silent = true, -- do not show message
 }
 
 -- lacal variable
@@ -53,7 +53,7 @@ map("v", "s", ":move '>+1<CR>gv-gv", opt)
 map("i", "<C-a>", "<ESC>I", opt) -- jump to the beginning of the line.
 map("i", "<C-e>", "<ESC>A", opt) -- jump to the end of the line.
 
--- exit from insert mode 
+-- exit from insert mode
 map("i", "jk", "<ESC>", opt)
 
 -- save file in insert mode.
@@ -67,8 +67,8 @@ map("i", "<C-s>", "<ESC>:w<CR>", opt)
 --NvimTree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
 map("n", "<C-f>", ":NvimTreeFindFile<CR>", opt)
-map("n", "=", ":NvimTreeResize +30<CR>", opt)
-map("n", "-", ":NvimTreeResize -30<CR>", opt)
+map("n", "=", ":NvimTreeResize +10<CR>", opt)
+map("n", "-", ":NvimTreeResize -10<CR>", opt)
 
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)

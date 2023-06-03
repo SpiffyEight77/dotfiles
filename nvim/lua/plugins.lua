@@ -1,116 +1,96 @@
-local packer = require("packer")
-packer.startup({
-  function(use)
-    -- Packer
-    use 'wbthomason/packer.nvim'
+return {
+	-- tokyonight
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {}
+	},
 
-    -- tokyonight
-    use("folke/tokyonight.nvim")
+	-- alpha-nvim
+	{
+		'goolord/alpha-nvim',
+		config = function()
+			require("config.alpha")
+		end
+	},
 
-    -- alpha-nvim
-    use {
-      'goolord/alpha-nvim',
-      config = function ()
-        require("config.alpha")
-      end
-    }
+	-- lualine
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true }
+	},
 
-    -- lualine
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+	-- bufferline
+	{ 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
-    -- bufferline
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
-    --- nvim-tree
-    use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {
-        'nvim-tree/nvim-web-devicons',
-      },
-      config = function()
-        require("nvim-tree").setup {}
-      end
-    }
+	--- nvim-tree
+	{
+		'nvim-tree/nvim-tree.lua',
+		dependencies = {
+			'nvim-tree/nvim-web-devicons',
+		},
+		config = function()
+			require("nvim-tree").setup {}
+		end
+	},
 
-    --- nvim-web-devicons
-    use 'nvim-tree/nvim-web-devicons'
 
-    --- telescope.nvim
-    use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.1',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
+	--- nvim-web-devicons
+	'nvim-tree/nvim-web-devicons',
 
-    -- nvim-treesitter
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-    }
+	--- telescope.nvim
+	{
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.1',
+		dependencies = { { 'nvim-lua/plenary.nvim' } }
+	},
 
-    --- indent-blankline.nvim
-    use "lukas-reineke/indent-blankline.nvim"
+	-- nvim-treesitter
+	{
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	},
 
-    --- gitsigns.nvim
-    use {
-      'lewis6991/gitsigns.nvim',
-    }
+	--- indent-blankline.nvim
+	"lukas-reineke/indent-blankline.nvim",
 
-    --- mason.nvim
-    use {
-      "williamboman/mason.nvim",
-      run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    }
+	--- gitsigns.nvim
+	'lewis6991/gitsigns.nvim',
 
-    --- mason-lspconfig.nvim
-    use {
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-    }
+	--- mason.nvim
+	{
+		"williamboman/mason.nvim",
+		run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+	},
 
-    --- nvim-cmp
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+	--- mason-lspconfig.nvim
+	{
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	},
 
-    --- vim-bbye
-    use 'moll/vim-bbye'
+	--- nvim-cmp
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-path',
+	'hrsh7th/cmp-cmdline',
+	'hrsh7th/nvim-cmp',
 
-    --- null-ls.nvim
-    use 'nvim-lua/plenary.nvim'
-    use({
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-    })
+	--- vim-bbye
+	'moll/vim-bbye',
 
-    --- nvim-autopairs
-    use {
-      "windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup {} end
-    }
+	--- null-ls.nvim
+	'nvim-lua/plenary.nvim',
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 
-  end,
-  config = {
-    max_jobs = 16,
-    display = {
-        open_fn = function()
-            return require("packer.util").float({ border = "single" })
-        end,
-    },
-  },
-})
-
--- automatically install plugins when the plugins.lua file is saved
-pcall(
-  vim.cmd,
-  [[
-    augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-  ]]
-)
+	--- nvim-autopairs
+	{
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	},
+}

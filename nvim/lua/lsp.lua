@@ -9,21 +9,21 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-  ensure_installed = { 'gopls', 'lua_ls' },
+  ensure_installed = { 'gopls', 'lua_ls', 'bufls' },
 })
 
 local lspconfig = require('lspconfig')
 local util = require "lspconfig/util"
 
 require("mason-lspconfig").setup_handlers {
-  function (server_name)
-      require("lspconfig")[server_name].setup {}
+  function(server_name)
+    require("lspconfig")[server_name].setup {}
   end,
 
-  ["gopls"] = function ()
+  ["gopls"] = function()
     lspconfig.gopls.setup {
-      cmd = {"gopls", "serve"},
-      filetypes = {"go", "gomod"},
+      cmd = { "gopls", "serve" },
+      filetypes = { "go", "gomod" },
       root_dir = util.root_pattern("go.work", "go.mod", ".git"),
       settings = {
         gopls = {
@@ -35,15 +35,22 @@ require("mason-lspconfig").setup_handlers {
       },
     }
   end,
-  ["lua_ls"] = function ()
+  ["lua_ls"] = function()
     lspconfig.lua_ls.setup {
       settings = {
         Lua = {
           diagnostics = {
             globals = { "vim" }
           }
-        }
-      }
+        },
+      },
+    }
+  end,
+  ["bufls"] = function()
+    lspconfig.bufls.setup {
+      cmd = { "bufls", "serve" },
+      filetypes = { "proto" },
+      root_dir = util.root_pattern("buf.work.yaml", ".git")
     }
   end
 }
@@ -68,7 +75,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<space>k', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
