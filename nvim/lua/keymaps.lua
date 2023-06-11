@@ -72,6 +72,7 @@ map("n", "-", ":NvimTreeResize -10<CR>", opt)
 
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+map("n", "<C-g>", ":Telescope live_grep<CR>", opt)
 
 -- Bufferline
 map("n", "P", ":BufferLineCyclePrev<CR>", opt)
