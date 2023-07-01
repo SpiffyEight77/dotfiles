@@ -15,4 +15,8 @@ return {
 	enable_tab_bar = false,
 
 	window_decorations = "RESIZE",
+
+	window_background_opacity = 0.6,
+
+	macos_window_background_blur = 100,
 }

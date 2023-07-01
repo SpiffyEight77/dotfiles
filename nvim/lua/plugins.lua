@@ -4,7 +4,10 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {}
+		opts = {},
+		config = function()
+			require("config.tokyonight")
+		end
 	},
 
 	-- alpha-nvim
@@ -93,4 +96,12 @@ return {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	},
+
+	--- transparent.nvim
+	{
+		"xiyaowong/transparent.nvim",
+		config = function()
+			require("config.transparent")
+		end
+	}
 }
