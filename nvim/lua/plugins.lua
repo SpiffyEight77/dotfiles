@@ -1,13 +1,10 @@
 return {
-	-- tokyonight
+	-- tokyonight.nvim
 	{
-		"folke/tokyonight.nvim",
+		'folke/tokyonight.nvim',
 		lazy = false,
 		priority = 1000,
 		opts = {},
-		config = function()
-			require("config.tokyonight")
-		end
 	},
 
 	-- alpha-nvim
@@ -25,10 +22,13 @@ return {
 	},
 
 	-- bufferline
-	{ 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons'
+	},
 
-
-	--- nvim-tree
+	-- nvim-tree
 	{
 		'nvim-tree/nvim-tree.lua',
 		dependencies = {
@@ -39,11 +39,10 @@ return {
 		end
 	},
 
-
-	--- nvim-web-devicons
+	-- nvim-web-devicons
 	'nvim-tree/nvim-web-devicons',
 
-	--- telescope.nvim
+	-- telescope.nvim
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.1',
@@ -56,52 +55,49 @@ return {
 		run = ':TSUpdate'
 	},
 
-	--- indent-blankline.nvim
+	-- indent-blankline.nvim
 	"lukas-reineke/indent-blankline.nvim",
 
-	--- gitsigns.nvim
+	-- gitsigns.nvim
 	'lewis6991/gitsigns.nvim',
 
-	--- mason.nvim
+	-- mason.nvim
 	{
 		"williamboman/mason.nvim",
 		run = ":MasonUpdate" -- :MasonUpdate updates registry contents
 	},
 
-	--- mason-lspconfig.nvim
+	-- mason-lspconfig.nvim
 	{
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	},
 
-	--- nvim-cmp
+	-- nvim-cmp
 	'hrsh7th/cmp-nvim-lsp',
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
 	'hrsh7th/nvim-cmp',
 
-	--- vim-bbye
+	-- vim-bbye
 	'moll/vim-bbye',
 
-	--- null-ls.nvim
+	-- null-ls.nvim
 	'nvim-lua/plenary.nvim',
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	--- nvim-autopairs
+	-- nvim-autopairs
 	{
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	},
 
-	--- transparent.nvim
+	-- zen-mode.nvim
 	{
-		"xiyaowong/transparent.nvim",
-		config = function()
-			require("config.transparent")
-		end
-	}
+		"folke/zen-mode.nvim",
+	},
 }

@@ -36,8 +36,7 @@ require("config.indent_blankline")
 require("config.gitsigns")
 require("config.nvim-cmp")
 require("config.null-ls")
-require("config.transparent")
-require("config.tokyonight")
+require("config.alpha")
 
 -- Colorscheme
 require("colorscheme")

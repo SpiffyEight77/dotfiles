@@ -12,7 +12,7 @@ null_ls.setup({
 
 		-- brew install shfmt
 		null_ls.builtins.formatting.shfmt.with({
-			filetypes = { "json", "markdown", "go", "protobuf", "lua" },
+			filetypes = { "json", "go", "protobuf", "lua" },
 		}),
 	},
 	on_attach = function(client, bufnr)

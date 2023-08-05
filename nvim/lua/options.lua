@@ -1,4 +1,4 @@
- -- utf8
+-- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
 
@@ -7,10 +7,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- display left icon to indicate column
- vim.wo.signcolumn = "yes"
-
--- right reference line
-vim.wo.colorcolumn = "80"
+vim.wo.signcolumn = "yes"
 
 -- four spaces equal one tab
 vim.o.tabstop = 4
@@ -109,3 +106,6 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.o.termguicolors = true
 
+-- spell checker
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true

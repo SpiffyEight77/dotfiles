@@ -83,3 +83,6 @@ map("n", "<C-c>", ":Bdelete!<CR>", opt)
 
 -- null-ls
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+
+-- zenmode
+map("n", "<leader>z", ":ZenMode<CR>", opt)
