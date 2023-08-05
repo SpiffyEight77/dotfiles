@@ -4,9 +4,7 @@ return {
 	font = wezterm.font_with_fallback { 'JetBrains Mono' },
 	font_size = 14.0,
 
-	color_scheme_dirs = { "$HOME/.config/wezterm/colors" },
-
-	color_scheme = "wezterm_tokyonight_storm",
+	color_scheme = 'tokyonight_storm',
 
 	scrollback_lines = 3500,
 
@@ -16,7 +14,7 @@ return {
 
 	window_decorations = "RESIZE",
 
-	window_background_opacity = 0.6,
+	-- window_background_opacity = 0.8,
 
-	macos_window_background_blur = 100,
+	-- macos_window_background_blur = 100,
 }
