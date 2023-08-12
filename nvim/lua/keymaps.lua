@@ -64,12 +64,6 @@ map("i", "<C-s>", "<ESC>:w<CR>", opt)
 -- Extensions --
 -----------------
 
---NvimTree
-map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
-map("n", "<C-f>", ":NvimTreeFindFile<CR>", opt)
-map("n", "=", ":NvimTreeResize +10<CR>", opt)
-map("n", "-", ":NvimTreeResize -10<CR>", opt)
-
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-g>", ":Telescope live_grep<CR>", opt)
@@ -86,3 +80,9 @@ map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
 
 -- zenmode
 map("n", "<leader>z", ":ZenMode<CR>", opt)
+
+--neo-tree
+map("n", "<C-n>", ":Neotree toggle<CR>", opt)
+map("n", "<C-f>", ":Neotree focus<CR>", opt)
+map("n", "=", ":vertical 1resize +10<CR>", opt)
+map("n", "-", ":vertical 1resize -10<CR>", opt)

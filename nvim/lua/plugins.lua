@@ -28,17 +28,6 @@ return {
 		dependencies = 'nvim-tree/nvim-web-devicons'
 	},
 
-	-- nvim-tree
-	{
-		'nvim-tree/nvim-tree.lua',
-		dependencies = {
-			'nvim-tree/nvim-web-devicons',
-		},
-		config = function()
-			require("nvim-tree").setup {}
-		end
-	},
-
 	-- nvim-web-devicons
 	'nvim-tree/nvim-web-devicons',
 
@@ -99,5 +88,16 @@ return {
 	-- zen-mode.nvim
 	{
 		"folke/zen-mode.nvim",
+	},
+
+	-- neo-tree.nvim
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		}
 	},
 }

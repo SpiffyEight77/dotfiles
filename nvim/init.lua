@@ -30,7 +30,6 @@ require("lazy").setup("plugins", {
 -- Plugin setting
 require("config.lualine")
 require("config.bufferline")
-require("config.nvim-tree")
 require("config.nvim-treesitter")
 require("config.indent_blankline")
 require("config.gitsigns")
