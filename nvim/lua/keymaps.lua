@@ -86,3 +86,6 @@ map("n", "<C-n>", ":Neotree toggle<CR>", opt)
 map("n", "<C-f>", ":Neotree focus<CR>", opt)
 map("n", "=", ":vertical 1resize +10<CR>", opt)
 map("n", "-", ":vertical 1resize -10<CR>", opt)
+
+-- lsp reference
+map("n", "cc", ":cclose<CR>", opt)
