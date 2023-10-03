@@ -9,7 +9,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-	ensure_installed = { 'gopls', 'lua_ls', 'bufls' },
+	ensure_installed = { 'gopls', 'lua_ls', 'bufls', 'html' },
 })
 
 local lspconfig = require('lspconfig')
@@ -53,6 +53,14 @@ require("mason-lspconfig").setup_handlers {
 			cmd = { "bufls", "serve" },
 			filetypes = { "proto" },
 			root_dir = util.root_pattern("buf.work.yaml", ".git")
+		}
+	end,
+
+	["html"] = function()
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+		lspconfig.html.setup {
+			capabilities = capabilities,
 		}
 	end
 }

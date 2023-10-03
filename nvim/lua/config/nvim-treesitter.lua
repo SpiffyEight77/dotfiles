@@ -1,9 +1,9 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "go" },
+require 'nvim-treesitter.configs'.setup {
+	ensure_installed = { "c", "lua", "go", "html", "javascript" },
 
 
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
 }

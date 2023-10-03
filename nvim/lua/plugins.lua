@@ -100,4 +100,40 @@ return {
 			"MunifTanjim/nui.nvim",
 		}
 	},
+
+	-- rose-pine/neovim
+	{
+		'rose-pine/neovim',
+		name = 'rose-pine',
+		config = function()
+			require('rose-pine').setup {
+				variant = 'moon',
+				dark_variant = 'moon',
+			}
+		end,
+	},
+
+	-- tpope/dadbod
+	{
+		'tpope/vim-dadbod'
+	},
+
+	-- kristijanhusak/vim-dadbod-ui
+	{
+		'kristijanhusak/vim-dadbod-ui',
+		dependencies = {
+			{ 'tpope/vim-dadbod',                     lazy = true },
+			{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+		},
+		cmd = {
+			'DBUI',
+			'DBUIToggle',
+			'DBUIAddConnection',
+			'DBUIFindBuffer',
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
 }
