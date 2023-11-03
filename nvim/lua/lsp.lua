@@ -62,7 +62,22 @@ require("mason-lspconfig").setup_handlers {
 		lspconfig.html.setup {
 			capabilities = capabilities,
 		}
-	end
+	end,
+
+	["yamlls"] = function()
+		lspconfig.yamlls.setup {
+			cmd = { "yaml-language-server", "--stdio" },
+			filetypes = { "yaml", "yaml.docker-compose" },
+			root_dir = util.find_git_ancestor,
+			settings = {
+				redhat = {
+					telemetry = {
+						enabled = false
+					}
+				}
+			}
+		}
+	end,
 }
 
 -- Global mappings.

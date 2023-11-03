@@ -7,9 +7,11 @@ null_ls.setup({
 		-- null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.completion.spell,
 		null_ls.builtins.formatting.goimports,
+		-- null_ls.builtins.formatting.yamlfix,
 		-- null_ls.builtins.formatting.lua_format,
-		-- null_ls.builtins.formatting.prettier.with({
-
+		null_ls.builtins.formatting.prettier.with({
+			filetypes = { "yaml" },
+		}),
 		-- brew install shfmt
 		null_ls.builtins.formatting.shfmt.with({
 			filetypes = { "json", "go", "protobuf", "lua" },
