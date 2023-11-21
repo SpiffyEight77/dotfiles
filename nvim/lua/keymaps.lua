@@ -83,7 +83,7 @@ map("n", "<leader>z", ":ZenMode<CR>", opt)
 
 --neo-tree
 map("n", "<C-n>", ":Neotree toggle<CR>", opt)
-map("n", "<C-f>", ":Neotree focus<CR>", opt)
+map("n", "<C-f>", ":Neotree filesystem reveal_force_cwd<CR>", opt)
 map("n", "=", ":vertical 1resize +10<CR>", opt)
 map("n", "-", ":vertical 1resize -10<CR>", opt)
 
