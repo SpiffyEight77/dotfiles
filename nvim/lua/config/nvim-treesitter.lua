@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-	ensure_installed = { "c", "lua", "go", "html", "javascript" },
+	ensure_installed = { "c", "lua", "go", "html", "javascript", "query", "vimdoc" },
 
 
 	highlight = {
