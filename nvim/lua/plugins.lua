@@ -45,7 +45,7 @@ return {
 	},
 
 	-- indent-blankline.nvim
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
 	-- gitsigns.nvim
 	'lewis6991/gitsigns.nvim',
