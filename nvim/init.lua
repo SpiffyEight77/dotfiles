@@ -1,45 +1,45 @@
 -- Options
-require('options')
+require "options"
 
 -- Keybindings
-require("keymaps")
+require "keymaps"
 
 -- lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+  vim.fn.system {
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  }
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-	install = {
-		-- install missing plugins on startup. This doesn't increase startup time.
-		missing = true,
-		-- try to load one of these colorschemes when starting an installation during startup
-		-- colorscheme = { "tokyonight" },
-		colorscheme = { "rose-pine" },
-	},
+  install = {
+    -- install missing plugins on startup. This doesn't increase startup time.
+    missing = true,
+    -- try to load one of these colorschemes when starting an installation during startup
+    -- colorscheme = { "tokyonight" },
+    colorscheme = { "rose-pine" },
+  },
 })
 
 -- Plugin setting
-require("config.lualine")
-require("config.bufferline")
-require("config.nvim-treesitter")
-require("config.indent_blankline")
-require("config.gitsigns")
-require("config.nvim-cmp")
-require("config.null-ls")
-require("config.alpha")
+require "config.lualine"
+require "config.bufferline"
+require "config.nvim-treesitter"
+require "config.indent_blankline"
+require "config.gitsigns"
+require "config.nvim-cmp"
+require "config.null-ls"
+require "config.alpha"
 
 -- Colorscheme
-require("colorscheme")
+require "colorscheme"
 
 -- LSP
-require("lsp")
+require "lsp"

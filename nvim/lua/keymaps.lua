@@ -12,8 +12,8 @@ vim.g.maplocalleader = " "
 
 -- define common options
 local opt = {
-	noremap = true, -- non-recursive
-	silent = true, -- do not show message
+  noremap = true, -- non-recursive
+  silent = true, -- do not show message
 }
 
 -- lacal variable
@@ -58,7 +58,6 @@ map("i", "jk", "<ESC>", opt)
 
 -- save file in insert mode.
 map("i", "<C-s>", "<ESC>:w<CR>", opt)
-
 
 ------------------
 -- Extensions --
