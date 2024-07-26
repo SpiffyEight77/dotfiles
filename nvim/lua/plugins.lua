@@ -72,10 +72,10 @@ return {
   -- vim-bbye
   "moll/vim-bbye",
 
-  -- null-ls.nvim
+  -- none-ls.nvim
   "nvim-lua/plenary.nvim",
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
