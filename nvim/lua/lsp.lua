@@ -9,7 +9,7 @@ require("mason").setup {
 }
 
 require("mason-lspconfig").setup {
-  ensure_installed = { "gopls", "lua_ls", "bufls", "html", "tsserver" },
+  ensure_installed = { "gopls", "lua_ls", "bufls", "html", "tsserver", "terraformls" },
 }
 
 local lspconfig = require "lspconfig"
@@ -79,6 +79,14 @@ require("mason-lspconfig").setup_handlers {
           },
         },
       },
+    }
+  end,
+
+  ["terraformls"] = function()
+    lspconfig.bufls.setup {
+      cmd = { "terraform-ls", "serve" },
+      filetypes = { "terraform", "terraform-vars" },
+      root_dir = util.root_pattern(".terraform", ".git"),
     }
   end,
 }
