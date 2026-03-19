@@ -28,6 +28,9 @@ require("lazy").setup("plugins", {
   },
 })
 
+-- Colorscheme
+require "colorscheme"
+
 -- Plugin setting
 require "config.lualine"
 require "config.bufferline"
@@ -37,9 +40,6 @@ require "config.gitsigns"
 require "config.nvim-cmp"
 require "config.null-ls"
 require "config.alpha"
-
--- Colorscheme
-require "colorscheme"
 
 -- LSP
 require "lsp"
