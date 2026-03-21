@@ -3,6 +3,9 @@ git/
 htop/
 karabiner/automatic_backups/
 karabiner/assets/
+mgba/
+raycast/
+tmux/plugins/
 
 ### macOS ###
 # General
