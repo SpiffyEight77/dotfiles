@@ -20,9 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
   install = {
-    -- install missing plugins on startup. This doesn't increase startup time.
     missing = true,
-    -- try to load one of these colorschemes when starting an installation during startup
     colorscheme = { "rose-pine" },
   },
 })
@@ -38,7 +36,6 @@ require "config.indent_blankline"
 require "config.gitsigns"
 require "config.nvim-cmp"
 require "config.null-ls"
-require "config.alpha"
 
 -- LSP
 require "lsp"
