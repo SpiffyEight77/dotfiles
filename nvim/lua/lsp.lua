@@ -1,113 +1,65 @@
-require("mason").setup {
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗",
+-- LSP server configurations
+vim.lsp.config("gopls", {
+  cmd = { "gopls", "serve" },
+  filetypes = { "go", "gomod" },
+  root_markers = { "go.work", "go.mod", ".git" },
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
     },
   },
-}
+})
 
-require("mason-lspconfig").setup {
-  ensure_installed = { "gopls", "lua_ls", "bufls", "html", "tsserver", "terraformls" },
-}
-
-local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
-
-require("mason-lspconfig").setup_handlers {
-  function(server_name)
-    require("lspconfig")[server_name].setup {}
-  end,
-
-  ["gopls"] = function()
-    lspconfig.gopls.setup {
-      cmd = { "gopls", "serve" },
-      filetypes = { "go", "gomod" },
-      root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-      settings = {
-        gopls = {
-          analyses = {
-            unusedparams = true,
-          },
-          staticcheck = true,
-        },
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
       },
-    }
-  end,
-
-  ["lua_ls"] = function()
-    lspconfig.lua_ls.setup {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-          format = {
-            enable = false,
-          },
-        },
+      format = {
+        enable = false,
       },
-    }
-  end,
+    },
+  },
+})
 
-  ["bufls"] = function()
-    lspconfig.bufls.setup {
-      cmd = { "bufls", "serve" },
-      filetypes = { "proto" },
-      root_dir = util.root_pattern("buf.work.yaml", ".git"),
-    }
-  end,
+vim.lsp.config("buf_ls", {
+  cmd = { "buf", "beta", "lsp" },
+  filetypes = { "proto" },
+  root_markers = { "buf.work.yaml", ".git" },
+})
 
-  ["html"] = function()
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    lspconfig.html.setup {
-      capabilities = capabilities,
-    }
-  end,
-
-  ["yamlls"] = function()
-    lspconfig.yamlls.setup {
-      cmd = { "yaml-language-server", "--stdio" },
-      filetypes = { "yaml", "yaml.docker-compose" },
-      root_dir = util.find_git_ancestor,
-      settings = {
-        redhat = {
-          telemetry = {
-            enabled = false,
-          },
-        },
+vim.lsp.config("yamlls", {
+  settings = {
+    redhat = {
+      telemetry = {
+        enabled = false,
       },
-    }
-  end,
+    },
+  },
+})
 
-  ["terraformls"] = function()
-    lspconfig.bufls.setup {
-      cmd = { "terraform-ls", "serve" },
-      filetypes = { "terraform", "terraform-vars" },
-      root_dir = util.root_pattern(".terraform", ".git"),
-    }
-  end,
-}
+vim.lsp.config("terraformls", {
+  cmd = { "terraform-ls", "serve" },
+  filetypes = { "terraform", "terraform-vars" },
+  root_markers = { ".terraform", ".git" },
+})
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+-- Global diagnostic mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
+-- Buffer local mappings after LSP attaches
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)

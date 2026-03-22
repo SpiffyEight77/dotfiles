@@ -33,7 +33,7 @@ return {
   -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    build = ":TSUpdate",
   },
 
   -- indent-blankline.nvim
@@ -42,16 +42,16 @@ return {
   -- gitsigns.nvim
   "lewis6991/gitsigns.nvim",
 
-  -- mason.nvim
-  {
-    "williamboman/mason.nvim",
-    run = ":MasonUpdate",
-  },
-
   -- mason-lspconfig.nvim
   {
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "gopls", "lua_ls", "buf_ls", "html", "ts_ls", "terraformls", "yamlls" },
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
   },
 
   -- nvim-cmp
@@ -60,12 +60,10 @@ return {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
-
   -- vim-bbye
   "moll/vim-bbye",
 
   -- none-ls.nvim
-  "nvim-lua/plenary.nvim",
   {
     "nvimtools/none-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
