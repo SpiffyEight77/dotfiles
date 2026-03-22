@@ -32,6 +32,10 @@ vim.lsp.config("buf_ls", {
   root_markers = { "buf.work.yaml", ".git" },
 })
 
+vim.lsp.config("html", {})
+
+vim.lsp.config("ts_ls", {})
+
 vim.lsp.config("yamlls", {
   settings = {
     redhat = {
