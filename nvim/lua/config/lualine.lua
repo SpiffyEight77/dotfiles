@@ -6,7 +6,6 @@ end
 
 lualine.setup {
   options = {
-    -- theme = "tokyonight",
     theme = "rose-pine",
     component_separators = { left = "|", right = "|" },
     -- https://github.com/ryanoasis/powerline-extra-symbols

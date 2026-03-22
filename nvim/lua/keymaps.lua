@@ -77,9 +77,6 @@ map("n", "<C-c>", ":Bdelete!<CR>", opt)
 -- null-ls
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
 
--- zenmode
-map("n", "<leader>z", ":ZenMode<CR>", opt)
-
 --neo-tree
 map("n", "<C-n>", ":Neotree toggle<CR>", opt)
 map("n", "<C-f>", ":Neotree filesystem reveal_force_cwd<CR>", opt)

@@ -1,12 +1,4 @@
 return {
-  -- tokyonight.nvim
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-
   -- alpha-nvim
   {
     "goolord/alpha-nvim",
@@ -53,7 +45,7 @@ return {
   -- mason.nvim
   {
     "williamboman/mason.nvim",
-    run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+    run = ":MasonUpdate",
   },
 
   -- mason-lspconfig.nvim
@@ -68,8 +60,6 @@ return {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
-  "hrsh7th/vim-vsnip",
-  "hrsh7th/cmp-vsnip",
 
   -- vim-bbye
   "moll/vim-bbye",
@@ -89,18 +79,13 @@ return {
     end,
   },
 
-  -- zen-mode.nvim
-  {
-    "folke/zen-mode.nvim",
-  },
-
   -- neo-tree.nvim
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
   },
@@ -118,51 +103,6 @@ return {
         },
       }
     end,
-  },
-
-  -- tpope/dadbod
-  {
-    "tpope/vim-dadbod",
-  },
-
-  -- kristijanhusak/vim-dadbod-ui
-  {
-    "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
-      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    },
-    cmd = {
-      "DBUI",
-      "DBUIToggle",
-      "DBUIAddConnection",
-      "DBUIFindBuffer",
-    },
-    init = function()
-      -- Your DBUI configuration
-      vim.g.db_ui_use_nerd_fonts = 1
-    end,
-  },
-
-  -- ellisonleao/glow.nvim
-  {
-    "ellisonleao/glow.nvim",
-    config = true,
-    cmd = "Glow",
-  },
-
-  -- mfussenegger/nvim-dap
-  {
-    "mfussenegger/nvim-dap",
-  },
-
-  -- rcarriga/nvim-dap-ui
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio",
-    },
   },
 
   -- github/copilot.vim
