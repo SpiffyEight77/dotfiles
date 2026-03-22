@@ -46,7 +46,7 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "gopls", "lua_ls", "buf_ls", "html", "ts_ls", "terraformls", "yamlls" },
+      ensure_installed = { "gopls", "lua_ls", "buf_ls", "html", "ts_ls", "yamlls" },
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },

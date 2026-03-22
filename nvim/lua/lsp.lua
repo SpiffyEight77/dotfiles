@@ -42,12 +42,6 @@ vim.lsp.config("yamlls", {
   },
 })
 
-vim.lsp.config("terraformls", {
-  cmd = { "terraform-ls", "serve" },
-  filetypes = { "terraform", "terraform-vars" },
-  root_markers = { ".terraform", ".git" },
-})
-
 -- Global diagnostic mappings
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
