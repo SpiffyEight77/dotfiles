@@ -12,6 +12,25 @@ To restore the development environment with the globally installed Homebrew appl
 brew bundle --global
 ```
 
+### Neovim Dependencies (without Brewfile)
+
+If not using `brew bundle --global`, install the following manually for Neovim:
+
+```
+brew install neovim ripgrep stylua prettier shfmt
+```
+
+### Additional Dependencies
+
+The following tools are not included in the Brewfile and need to be installed manually:
+
+```
+# Go formatter (required by none-ls.nvim)
+go install golang.org/x/tools/cmd/goimports@latest
+```
+
+> Make sure `~/go/bin` is added to your `PATH`.
+
 ### Backup the Development Environment
 
 To backup the currently installed global Homebrew applications and their formulae and taps to the `Brewfile`, run:
