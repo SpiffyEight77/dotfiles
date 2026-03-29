@@ -19,9 +19,7 @@ vim.bo.tabstop = 4
 vim.o.shiftwidth = 4
 vim.bo.shiftwidth = 4
 
--- replace space with tab
 -- vim.o.expandtab = true
--- vim.bo.expandtab = true
 
 -- align new lines with current line
 -- vim.o.autoindent = true
