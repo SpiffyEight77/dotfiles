@@ -1,15 +1,8 @@
 [tools]
 lua = "5.1"
-neovim = "0.11.2"
 node = "24"
-"pipx:mycli" = "1.69.0"
 pnpm = "10"
 python = "3.14.4"
 
 [settings.npm]
 package_manager = "pnpm"
-
-[shell_alias]
-vim = 'nvim'
-vi = 'nvim'
-v = 'nvim'
