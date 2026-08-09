@@ -1,0 +1,9 @@
+font-family = JetBrains Mono
+font-size = 14
+theme = Rose Pine Moon
+macos-icon = blueprint
+macos-titlebar-style = hidden
+window-padding-x = 12
+window-padding-y = 8
+cursor-style = block
+shell-integration-features = no-cursor
