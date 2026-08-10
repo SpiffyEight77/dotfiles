@@ -1,0 +1,18 @@
+[keys]
+prefix = "ctrl+a"
+focus_agent = "prefix+alt+1..9"
+switch_workspace = "prefix+shift+1..9"
+
+[theme]
+name = "rose-pine"
+auto_switch = false
+
+[ui]
+sidebar_collapsed_mode = "hidden"
+sidebar_width = 26
+sidebar_min_width = 26
+tab_bar_position = "top"
+
+agent_panel_sort = "spaces"
+[ui.sound]
+enabled = false
