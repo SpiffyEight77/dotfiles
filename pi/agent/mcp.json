@@ -1,0 +1,16 @@
+{
+     "mcpServers": {
+       "apidog": {
+         "command": "sh",
+         "args": ["-c", "id=$(cat ~/.config/apidog/apidog.project-id) && exec npx -y apidog-mcp-server@latest --project-id=\"$id\""],
+         "env": { "APIDOG_ACCESS_TOKEN": "!cat $HOME/.config/apidog/token" },
+         "description": "Apidog API specification of receipt-backend project"
+       },
+       "apidog-2": {
+         "command": "sh",
+         "args": ["-c", "id=$(cat ~/.config/apidog/apidog-2.project-id) && exec npx -y apidog-mcp-server@latest --project-id=\"$id\""],
+         "env": { "APIDOG_ACCESS_TOKEN": "!cat $HOME/.config/apidog/token" },
+         "description": "Apidog API specification of a second project"
+       }
+     }
+   }
