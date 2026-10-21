@@ -95,11 +95,8 @@ return {
     name = "rose-pine",
     config = function()
       require("rose-pine").setup {
-        variant = "moon",
-        dark_variant = "moon",
-        highlight_groups = {
-          Search = { fg = "#e0def4", bg = "#56526e" },
-        },
+        variant = "main",
+        dark_variant = "main",
       }
     end,
   },
