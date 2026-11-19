@@ -12,6 +12,6 @@
     "npm:pi-background-tasks"
   ],
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.1"
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.89.1"
   }
 }
